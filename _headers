@@ -1,0 +1,16 @@
+# Security and caching headers for Netlify and Cloudflare Pages.
+# If you add analytics or ads later, you will need to loosen the Content-Security-Policy.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'
+
+/css/*
+  Cache-Control: public, max-age=86400
+/js/*
+  Cache-Control: public, max-age=86400
+/*.png
+  Cache-Control: public, max-age=86400
+/*.svg
+  Cache-Control: public, max-age=86400

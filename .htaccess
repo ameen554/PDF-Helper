@@ -1,0 +1,31 @@
+# Settings for Apache hosting (most shared hosts). Safe to delete on other hosts.
+
+ErrorDocument 404 /404.html
+
+# Uncomment to force HTTPS once your certificate is active:
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json application/manifest+json image/svg+xml text/xml application/xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType text/css "access plus 1 day"
+  ExpiresByType application/javascript "access plus 1 day"
+  ExpiresByType text/javascript "access plus 1 day"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+</IfModule>
+
+# If you add analytics or ads later, you will need to loosen the Content-Security-Policy.
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header set Content-Security-Policy "default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+</IfModule>

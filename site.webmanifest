@@ -1,0 +1,14 @@
+{
+  "name": "Leafpress",
+  "short_name": "Leafpress",
+  "description": "Simple file tools that run in your browser.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F2EB",
+  "theme_color": "#8B9A6E",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

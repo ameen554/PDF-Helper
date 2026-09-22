@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO: replace https://www.yourdomain.com with your real domain everywhere (search and replace). -->
+  <title>PDF to Excel Converter – PDF Tables to XLSX | Leafpress</title>
+  <meta name="description" content="Convert tables in text-based PDFs to an Excel .xlsx file in your browser. Preview the result and choose pages. Free, and your PDF is never uploaded.">
+  <link rel="canonical" href="https://www.yourdomain.com/pdf-to-excel.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#8B9A6E">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Leafpress">
+  <meta property="og:title" content="PDF to Excel Converter – PDF Tables to XLSX | Leafpress">
+  <meta property="og:description" content="Turn PDF tables into an Excel file in your browser. Nothing is uploaded.">
+  <meta property="og:url" content="https://www.yourdomain.com/pdf-to-excel.html">
+  <meta property="og:image" content="https://www.yourdomain.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Leafpress PDF to Excel converter">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PDF to Excel Converter – PDF Tables to XLSX | Leafpress">
+  <meta name="twitter:description" content="Turn PDF tables into an Excel file in your browser. Nothing is uploaded.">
+  <meta name="twitter:image" content="https://www.yourdomain.com/og-image.png">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/zip-builder.js" defer></script>
+  <script src="js/xlsx-builder.js" defer></script>
+  <script src="js/pdf-to-excel.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Leafpress PDF to Excel",
+        "url": "https://www.yourdomain.com/pdf-to-excel.html",
+        "description": "Free online tool that converts tables in text-based PDFs to an Excel .xlsx file in your browser. Files are never uploaded.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.yourdomain.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "PDF to Excel",
+            "item": "https://www.yourdomain.com/pdf-to-excel.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is the PDF to Excel converter free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. There is no sign-up, no watermark and no limit on how many PDFs you can convert."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my PDF uploaded to a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Leafpress reads your PDF and builds the Excel file inside your browser, on your own device. The file is never sent to us or anyone else, so it is suitable for private documents."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which PDFs work best?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PDFs made on a computer, such as invoices, price lists, bank statements and reports exported from Word, Excel or accounting software. They contain real text, which Leafpress can read together with its position on the page."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it convert scanned PDFs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not yet. A scanned PDF is a picture of a page, and turning a picture into cells needs OCR (text recognition), which Leafpress does not do. A quick check: if you cannot select text in the PDF with your mouse, it is a scan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does it find the columns?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Leafpress looks at where the text sits on the page. Text on the same line becomes a row, and text that lines up down the page becomes a column. If columns are joined or split in the wrong places, change Column detection to Split more or Split less and convert again."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will colours, borders and merged cells be kept?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. You get the text and numbers in cells, without the formatting of the original. That keeps the sheet clean and easy to edit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are some numbers left as text?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "With the number option on, values such as 1,234.50, (45.00) and 12% become Excel numbers, and currency symbols and thousands separators are removed so you can calculate with them. Codes with leading zeros, very long numbers such as account numbers, dates, and anything mixed with letters stay as text so they are not changed. Turn the option off to keep everything exactly as written."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does one table cell appear on several rows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When text wraps over several lines inside a cell in the PDF, each line is read as its own row. You can join them in Excel after converting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a page limit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can convert up to 300 pages at a time. For a longer PDF, use the Pages box to convert it in parts."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Leafpress home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#55633B"/>
+          <path d="M9 23C9 15 14 10 23 9C22 18 17 23 9 23Z" fill="#F7F2EB"/>
+          <path d="M11.5 20.5L19 13" stroke="#55633B" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span>Leafpress</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li class="has-menu">
+            <button class="menu-toggle is-current" type="button" aria-expanded="false" aria-controls="tools-menu">
+              Tools
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+            </button>
+            <ul class="tools-menu" id="tools-menu">
+              <li><a href="image-to-pdf.html"><span class="tm-name">Image to PDF</span><span class="tm-desc">Combine photos into one PDF</span></a></li>
+              <li><a href="pdf-to-image.html"><span class="tm-name">PDF to Image</span><span class="tm-desc">Save PDF pages as JPG, PNG or WebP</span></a></li>
+              <li><a href="pdf-to-excel.html" aria-current="page"><span class="tm-name">PDF to Excel</span><span class="tm-desc">Turn PDF tables into an .xlsx file</span></a></li>
+              <li><a href="merge-pdf.html"><span class="tm-name">Merge PDF</span><span class="tm-desc">Join several PDFs into one file</span></a></li>
+              <li><a href="split-pdf.html"><span class="tm-name">Split PDF</span><span class="tm-desc">Extract pages or split into parts</span></a></li>
+              <li><a href="compress-pdf.html"><span class="tm-name">Compress PDF</span><span class="tm-desc">Shrink scanned or photo-heavy PDFs</span></a></li>
+              <li><a href="compress-image.html"><span class="tm-name">Compress Image</span><span class="tm-desc">Reduce JPG, PNG and WebP size</span></a></li>
+              <li class="tm-all"><a href="index.html#tools"><span class="tm-name">See all tools</span></a></li>
+            </ul>
+          </li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container page-head">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">PDF to Excel</li>
+        </ol>
+      </nav>
+      <h1>PDF to Excel converter</h1>
+      <p class="lead">Turn the tables in a PDF into an Excel spreadsheet you can edit and calculate with. It works on PDFs with selectable text, and everything happens in your browser, so your file is never uploaded.</p>
+    </div>
+
+    <section class="tool container" id="tool" aria-labelledby="tool-heading">
+      <h2 id="tool-heading" class="visually-hidden">Convert your PDF to Excel</h2>
+
+      <div class="tool-card" id="tool-card">
+        <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-describedby="dz-hint">
+          <svg class="dz-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 6h26l10 10v42H14z"/>
+            <path d="M40 6v10h10"/>
+            <path d="M21 30h22M21 38h22M21 46h22M32 26v24"/>
+          </svg>
+          <p class="dz-title">Drop a PDF here or <span class="dz-browse">choose a file</span></p>
+          <p class="dz-hint" id="dz-hint">One PDF at a time. Your file stays on your device.</p>
+        </div>
+        <input class="visually-hidden" id="file-input" type="file" accept="application/pdf,.pdf" tabindex="-1" aria-label="Choose a PDF">
+
+        <div class="workspace" id="workspace" hidden>
+          <div class="file-info">
+            <svg class="file-info-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 6h26l10 10v42H14z"/>
+              <path d="M40 6v10h10"/>
+              <path d="M22 34h20M22 42h20M22 26h10"/>
+            </svg>
+            <div class="file-info-text">
+              <p class="file-info-name" id="file-name"></p>
+              <p class="file-info-meta" id="file-meta"></p>
+            </div>
+            <button class="btn btn-secondary btn-sm" id="change-file" type="button">Change file</button>
+          </div>
+
+          <div class="options">
+            <div class="field">
+              <label for="opt-sheets">Sheets</label>
+              <select id="opt-sheets">
+                <option value="one" selected>All pages on one sheet</option>
+                <option value="per-page">One sheet per page</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="opt-columns">Column detection</label>
+              <select id="opt-columns">
+                <option value="normal" selected>Normal</option>
+                <option value="tight">Split more (narrow gaps)</option>
+                <option value="wide">Split less (wide gaps)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="opt-pages">Pages</label>
+              <input id="opt-pages" type="text" inputmode="numeric" placeholder="All pages" autocomplete="off" spellcheck="false" aria-describedby="pages-hint">
+            </div>
+          </div>
+          <p class="field-hint" id="pages-hint">Leave Pages empty to convert every page, or type a selection such as 1-3, 5.</p>
+
+          <label class="choice choice-single">
+            <input type="checkbox" id="opt-numbers" checked>
+            <span><strong>Turn numbers into Excel numbers</strong><small>So you can add up and sort them. Currency symbols and thousands separators are removed, and codes with leading zeros stay as text.</small></span>
+          </label>
+
+          <p class="note">This works for PDFs with selectable text, such as ones made from Word, Excel or accounting software. Scanned pages are pictures of text and cannot be converted.</p>
+
+          <div class="actions">
+            <button class="btn btn-primary btn-lg" id="convert-btn" type="button" disabled>Convert to Excel</button>
+          </div>
+
+          <div class="progress" id="progress" role="status" hidden>
+            <div class="progress-track"><div class="progress-bar" id="progress-bar"></div></div>
+            <p class="progress-text" id="progress-text"></p>
+          </div>
+
+          <div class="result" id="result" role="status" hidden>
+            <p id="result-text"></p>
+            <div class="result-actions">
+              <a class="btn btn-primary" id="download-link" download="spreadsheet.xlsx">Download Excel file</a>
+              <button class="btn btn-secondary" id="start-over" type="button">Start over</button>
+            </div>
+          </div>
+
+          <div class="preview" id="preview" hidden>
+            <h3 class="preview-title">Preview</h3>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Preview of the spreadsheet">
+              <table class="preview-table" id="preview-table"></table>
+            </div>
+            <p class="preview-note" id="preview-note"></p>
+          </div>
+        </div>
+
+        <p class="error" id="error-msg" role="alert" hidden></p>
+        <noscript><p class="noscript">This tool needs JavaScript to work. Please turn it on in your browser settings and reload the page.</p></noscript>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="how-heading">
+      <div class="container">
+        <h2 id="how-heading">How to convert a PDF to Excel</h2>
+        <ol class="steps">
+          <li>
+            <h3>Add your PDF</h3>
+            <p>Drop the file onto the box or choose it from your device. It is opened on your device and never sent anywhere.</p>
+          </li>
+          <li>
+            <h3>Check the options</h3>
+            <p>Put all pages on one sheet or give each its own, and pick the pages you need. The defaults suit most tables.</p>
+          </li>
+          <li>
+            <h3>Preview and download</h3>
+            <p>See the first rows of your spreadsheet right away, then download the .xlsx file and open it in Excel, Google Sheets or Numbers.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="why-heading">
+      <div class="split">
+        <div class="split-intro">
+          <h2 id="why-heading">Tables you can edit, without the upload</h2>
+          <p>Statements, price lists and reports are hard to work with when they are locked in a PDF. Convert them here without handing your documents to a stranger's server.</p>
+        </div>
+        <ul class="points">
+          <li>
+            <h3>Your PDF stays on your device</h3>
+            <p>The work happens in your browser. Bank statements, invoices and financial reports are never uploaded.</p>
+          </li>
+          <li>
+            <h3>See it before you download</h3>
+            <p>A preview shows the rows and columns that were found, and you can adjust the column detection and convert again in a moment.</p>
+          </li>
+          <li>
+            <h3>Numbers that calculate</h3>
+            <p>Amounts become real Excel numbers, so sums, sorting and charts work straight away.</p>
+          </li>
+          <li>
+            <h3>Free, with no watermark</h3>
+            <p>No sign-up and no limits on how often you use it.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section container" id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently asked questions</h2>
+      <div class="faq">
+        <details>
+          <summary>Is the PDF to Excel converter free?</summary>
+          <p>Yes. There is no sign-up, no watermark and no limit on how many PDFs you can convert.</p>
+        </details>
+        <details>
+          <summary>Is my PDF uploaded to a server?</summary>
+          <p>No. Leafpress reads your PDF and builds the Excel file inside your browser, on your own device. The file is never sent to us or anyone else, so it is suitable for private documents.</p>
+        </details>
+        <details>
+          <summary>Which PDFs work best?</summary>
+          <p>PDFs made on a computer, such as invoices, price lists, bank statements and reports exported from Word, Excel or accounting software. They contain real text, which Leafpress can read together with its position on the page.</p>
+        </details>
+        <details>
+          <summary>Can it convert scanned PDFs?</summary>
+          <p>Not yet. A scanned PDF is a picture of a page, and turning a picture into cells needs OCR (text recognition), which Leafpress does not do. A quick check: if you cannot select text in the PDF with your mouse, it is a scan.</p>
+        </details>
+        <details>
+          <summary>How does it find the columns?</summary>
+          <p>Leafpress looks at where the text sits on the page. Text on the same line becomes a row, and text that lines up down the page becomes a column. If columns are joined or split in the wrong places, change Column detection to Split more or Split less and convert again.</p>
+        </details>
+        <details>
+          <summary>Will colours, borders and merged cells be kept?</summary>
+          <p>No. You get the text and numbers in cells, without the formatting of the original. That keeps the sheet clean and easy to edit.</p>
+        </details>
+        <details>
+          <summary>Why are some numbers left as text?</summary>
+          <p>With the number option on, values such as 1,234.50, (45.00) and 12% become Excel numbers, and currency symbols and thousands separators are removed so you can calculate with them. Codes with leading zeros, very long numbers such as account numbers, dates, and anything mixed with letters stay as text so they are not changed. Turn the option off to keep everything exactly as written.</p>
+        </details>
+        <details>
+          <summary>Why does one table cell appear on several rows?</summary>
+          <p>When text wraps over several lines inside a cell in the PDF, each line is read as its own row. You can join them in Excel after converting.</p>
+        </details>
+        <details>
+          <summary>Is there a page limit?</summary>
+          <p>You can convert up to 300 pages at a time. For a longer PDF, use the Pages box to convert it in parts.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Leafpress home">
+            <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#55633B"/>
+              <path d="M9 23C9 15 14 10 23 9C22 18 17 23 9 23Z" fill="#F7F2EB"/>
+              <path d="M11.5 20.5L19 13" stroke="#55633B" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+            </svg>
+            <span>Leafpress</span>
+          </a>
+          <p class="footer-note">Simple file tools that run in your browser. Your files never leave your device.</p>
+        </div>
+        <div>
+          <h2>Tools</h2>
+          <ul>
+            <li><a href="image-to-pdf.html">Image to PDF</a></li>
+            <li><a href="pdf-to-image.html">PDF to Image</a></li>
+            <li><a href="pdf-to-excel.html">PDF to Excel</a></li>
+            <li><a href="merge-pdf.html">Merge PDF</a></li>
+            <li><a href="split-pdf.html">Split PDF</a></li>
+            <li><a href="compress-pdf.html">Compress PDF</a></li>
+            <li><a href="compress-image.html">Compress Image</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Site</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <p>&copy; <span data-year>2026</span> Leafpress. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

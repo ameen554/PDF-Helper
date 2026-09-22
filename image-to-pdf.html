@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO: replace https://www.yourdomain.com with your real domain everywhere (search and replace). -->
+  <title>Image to PDF Converter – Free &amp; Private | Leafpress</title>
+  <meta name="description" content="Convert JPG, PNG and WebP images to one PDF in your browser. Reorder, rotate and pick a page size. Free, no sign-up, and your files never leave your device.">
+  <link rel="canonical" href="https://www.yourdomain.com/image-to-pdf.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#8B9A6E">
+
+  <!-- Open Graph and Twitter cards (how the page looks when shared) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Leafpress">
+  <meta property="og:title" content="Image to PDF Converter – Free &amp; Private | Leafpress">
+  <meta property="og:description" content="Combine photos and scans into one PDF in your browser. Nothing is uploaded.">
+  <meta property="og:url" content="https://www.yourdomain.com/image-to-pdf.html">
+  <meta property="og:image" content="https://www.yourdomain.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Leafpress image to PDF converter">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Image to PDF Converter – Free &amp; Private | Leafpress">
+  <meta name="twitter:description" content="Combine photos and scans into one PDF in your browser. Nothing is uploaded.">
+  <meta name="twitter:image" content="https://www.yourdomain.com/og-image.png">
+
+  <!-- Icons and manifest -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/pdf-builder.js" defer></script>
+  <script src="js/image-to-pdf.js" defer></script>
+
+  <!-- Structured data: tells search engines this is a free web tool with an FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Leafpress Image to PDF",
+        "url": "https://www.yourdomain.com/image-to-pdf.html",
+        "description": "Free online tool that converts JPG, PNG and WebP images into a single PDF in your browser. Files are never uploaded.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (web browser)",
+        "browserRequirements": "Requires JavaScript",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yourdomain.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Image to PDF", "item": "https://www.yourdomain.com/image-to-pdf.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is the image to PDF converter free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. There is no sign-up, no watermark and no limit on how many times you can use it." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my images uploaded to a server?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Leafpress converts your images inside your browser, on your own device. The files are never sent to us or anyone else, so it is suitable for private documents such as IDs, receipts and contracts." }
+          },
+          {
+            "@type": "Question",
+            "name": "Which image formats can I use?",
+            "acceptedAnswer": { "@type": "Answer", "text": "JPG, PNG, WebP, GIF and BMP work in every modern browser, and AVIF works in most. HEIC photos from an iPhone open only in Safari. If your browser cannot read them, set your iPhone camera to Most Compatible or export them as JPG first. Animated GIFs use their first frame." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I put several images in one PDF and change their order?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Add as many images as you like, drag them into order or use the arrow buttons, and rotate any that are sideways. Each image becomes one page." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I make the PDF file smaller?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Choose Medium or Low under Quality. Medium is usually a good balance for email and online forms, and Low gives the smallest file. Large photos from modern phones are the main cause of big PDFs, and lowering the quality shrinks them." }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens to transparent PNG images?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Pages are built from JPEG image data, which cannot be see-through, so transparent areas turn white." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work on my phone?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tap the box to choose photos from your gallery or take new ones with your camera, then download the PDF from your browser." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a limit on the number or size of images?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Leafpress does not set a limit. The practical limit is your device's memory, so if a very large batch stalls, convert it in smaller groups." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Leafpress home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="#55633B"/>
+          <path d="M9 23C9 15 14 10 23 9C22 18 17 23 9 23Z" fill="#F7F2EB"/>
+          <path d="M11.5 20.5L19 13" stroke="#55633B" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span>Leafpress</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li class="has-menu">
+            <button class="menu-toggle is-current" type="button" aria-expanded="false" aria-controls="tools-menu">
+              Tools
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+            </button>
+            <ul class="tools-menu" id="tools-menu">
+              <li><a href="image-to-pdf.html" aria-current="page"><span class="tm-name">Image to PDF</span><span class="tm-desc">Combine photos into one PDF</span></a></li>
+              <li><a href="pdf-to-image.html"><span class="tm-name">PDF to Image</span><span class="tm-desc">Save PDF pages as JPG, PNG or WebP</span></a></li>
+              <li><a href="pdf-to-excel.html"><span class="tm-name">PDF to Excel</span><span class="tm-desc">Turn PDF tables into an .xlsx file</span></a></li>
+              <li><a href="merge-pdf.html"><span class="tm-name">Merge PDF</span><span class="tm-desc">Join several PDFs into one file</span></a></li>
+              <li><a href="split-pdf.html"><span class="tm-name">Split PDF</span><span class="tm-desc">Extract pages or split into parts</span></a></li>
+              <li><a href="compress-pdf.html"><span class="tm-name">Compress PDF</span><span class="tm-desc">Shrink scanned or photo-heavy PDFs</span></a></li>
+              <li><a href="compress-image.html"><span class="tm-name">Compress Image</span><span class="tm-desc">Reduce JPG, PNG and WebP size</span></a></li>
+              <li class="tm-all"><a href="index.html#tools"><span class="tm-name">See all tools</span></a></li>
+            </ul>
+          </li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container page-head">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Image to PDF</li>
+        </ol>
+      </nav>
+      <h1>Image to PDF converter</h1>
+      <p class="lead">Add your photos or scans, drag them into order, and download one PDF. Everything happens in your browser, so your files are never uploaded.</p>
+    </div>
+
+    <section class="tool container" id="tool" aria-labelledby="tool-heading">
+      <h2 id="tool-heading" class="visually-hidden">Convert your images</h2>
+
+      <div class="tool-card" id="tool-card">
+        <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-describedby="dz-hint">
+          <svg class="dz-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 6h26l10 10v42H14z"/>
+            <path d="M40 6v10h10"/>
+            <path d="M22 47l8-9 6 6 4-4 4 7"/>
+            <circle cx="27" cy="28" r="3"/>
+          </svg>
+          <p class="dz-title">Drop images here or <span class="dz-browse">choose files</span></p>
+          <p class="dz-hint" id="dz-hint">JPG, PNG, WebP, GIF, BMP or AVIF. You can also paste with Ctrl+V.</p>
+        </div>
+        <input class="visually-hidden" id="file-input" type="file" accept="image/*" multiple tabindex="-1" aria-label="Choose images">
+
+        <div class="workspace" id="workspace" hidden>
+          <div class="workspace-head">
+            <p class="summary" id="summary" aria-live="polite"></p>
+            <div class="head-actions">
+              <button class="btn btn-secondary btn-sm" id="add-more" type="button">Add more images</button>
+              <button class="btn btn-quiet btn-sm" id="clear-all" type="button">Clear all</button>
+            </div>
+          </div>
+
+          <ol class="file-grid" id="file-list" aria-label="Images in page order"></ol>
+
+          <div class="options">
+            <div class="field">
+              <label for="opt-size">Page size</label>
+              <select id="opt-size">
+                <option value="a4" selected>A4</option>
+                <option value="letter">US Letter</option>
+                <option value="legal">US Legal</option>
+                <option value="a3">A3</option>
+                <option value="a5">A5</option>
+                <option value="fit">Same as image</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="opt-orient">Orientation</label>
+              <select id="opt-orient">
+                <option value="auto" selected>Match each image</option>
+                <option value="portrait">Portrait</option>
+                <option value="landscape">Landscape</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="opt-margin">Margin</label>
+              <select id="opt-margin">
+                <option value="0">None</option>
+                <option value="18" selected>Small</option>
+                <option value="36">Medium</option>
+                <option value="54">Large</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="opt-quality">Quality</label>
+              <select id="opt-quality">
+                <option value="high" selected>High (larger file)</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low (smallest file)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field field-name">
+            <label for="opt-name">File name</label>
+            <input id="opt-name" type="text" value="images" maxlength="120" autocomplete="off" spellcheck="false">
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary btn-lg" id="convert-btn" type="button" disabled>Convert to PDF</button>
+          </div>
+
+          <div class="progress" id="progress" role="status" hidden>
+            <div class="progress-track"><div class="progress-bar" id="progress-bar"></div></div>
+            <p class="progress-text" id="progress-text"></p>
+          </div>
+
+          <div class="result" id="result" role="status" hidden>
+            <p id="result-text"></p>
+            <div class="result-actions">
+              <a class="btn btn-primary" id="download-link" download="images.pdf">Download PDF</a>
+              <button class="btn btn-secondary" id="start-over" type="button">Start over</button>
+            </div>
+          </div>
+        </div>
+
+        <p class="error" id="error-msg" role="alert" hidden></p>
+        <noscript><p class="noscript">This tool needs JavaScript to work. Please turn it on in your browser settings and reload the page.</p></noscript>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="how-heading">
+      <div class="container">
+        <h2 id="how-heading">How to convert images to PDF</h2>
+        <ol class="steps">
+          <li>
+            <h3>Add your images</h3>
+            <p>Drop files onto the box, choose them from your device, or paste them with Ctrl+V. Add as many as you need.</p>
+          </li>
+          <li>
+            <h3>Arrange and adjust</h3>
+            <p>Drag the pages into order, rotate any that are sideways, then pick a page size, margin and quality.</p>
+          </li>
+          <li>
+            <h3>Download your PDF</h3>
+            <p>Select Convert to PDF. The file is built on your device and is ready to save in a few seconds.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="why-heading">
+      <div class="split">
+        <div class="split-intro">
+          <h2 id="why-heading">A PDF is easier to send than a folder of pictures</h2>
+          <p>Combine phone photos, scanned pages, receipts or screenshots into one tidy file that opens the same way on every device.</p>
+        </div>
+        <ul class="points">
+          <li>
+            <h3>Your files stay on your device</h3>
+            <p>The conversion runs in your browser. Nothing is uploaded, so IDs, receipts and contracts stay private.</p>
+          </li>
+          <li>
+            <h3>No sign-up and no watermark</h3>
+            <p>Convert as often as you like. The PDF contains your images and nothing else.</p>
+          </li>
+          <li>
+            <h3>You control the result</h3>
+            <p>Match A4 or Letter paper, keep each page the size of its image, add margins, or lower the quality to shrink the file for email.</p>
+          </li>
+          <li>
+            <h3>Works on phone and computer</h3>
+            <p>Choose photos from your gallery or drag files in from your desktop. There is nothing to install.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section container" id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently asked questions</h2>
+      <div class="faq">
+        <details>
+          <summary>Is the image to PDF converter free?</summary>
+          <p>Yes. There is no sign-up, no watermark and no limit on how many times you can use it.</p>
+        </details>
+        <details>
+          <summary>Are my images uploaded to a server?</summary>
+          <p>No. Leafpress converts your images inside your browser, on your own device. The files are never sent to us or anyone else, so it is suitable for private documents such as IDs, receipts and contracts.</p>
+        </details>
+        <details>
+          <summary>Which image formats can I use?</summary>
+          <p>JPG, PNG, WebP, GIF and BMP work in every modern browser, and AVIF works in most. HEIC photos from an iPhone open only in Safari. If your browser cannot read them, set your iPhone camera to Most Compatible or export them as JPG first. Animated GIFs use their first frame.</p>
+        </details>
+        <details>
+          <summary>Can I put several images in one PDF and change their order?</summary>
+          <p>Yes. Add as many images as you like, drag them into order or use the arrow buttons, and rotate any that are sideways. Each image becomes one page.</p>
+        </details>
+        <details>
+          <summary>How do I make the PDF file smaller?</summary>
+          <p>Choose Medium or Low under Quality. Medium is usually a good balance for email and online forms, and Low gives the smallest file. Large photos from modern phones are the main cause of big PDFs, and lowering the quality shrinks them.</p>
+        </details>
+        <details>
+          <summary>What happens to transparent PNG images?</summary>
+          <p>Pages are built from JPEG image data, which cannot be see-through, so transparent areas turn white.</p>
+        </details>
+        <details>
+          <summary>Does it work on my phone?</summary>
+          <p>Yes. Tap the box to choose photos from your gallery or take new ones with your camera, then download the PDF from your browser.</p>
+        </details>
+        <details>
+          <summary>Is there a limit on the number or size of images?</summary>
+          <p>Leafpress does not set a limit. The practical limit is your device's memory, so if a very large batch stalls, convert it in smaller groups.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Leafpress home">
+            <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="#55633B"/>
+              <path d="M9 23C9 15 14 10 23 9C22 18 17 23 9 23Z" fill="#F7F2EB"/>
+              <path d="M11.5 20.5L19 13" stroke="#55633B" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+            </svg>
+            <span>Leafpress</span>
+          </a>
+          <p class="footer-note">Simple file tools that run in your browser. Your files never leave your device.</p>
+        </div>
+        <div>
+          <h2>Tools</h2>
+          <ul>
+            <li><a href="image-to-pdf.html">Image to PDF</a></li>
+            <li><a href="pdf-to-image.html">PDF to Image</a></li>
+            <li><a href="pdf-to-excel.html">PDF to Excel</a></li>
+            <li><a href="merge-pdf.html">Merge PDF</a></li>
+            <li><a href="split-pdf.html">Split PDF</a></li>
+            <li><a href="compress-pdf.html">Compress PDF</a></li>
+            <li><a href="compress-image.html">Compress Image</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Site</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <p>&copy; <span data-year>2026</span> Leafpress. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
