@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none">
+  <path d="M48 36H88L116 64V164H48Z" fill="#F7F2EB" stroke="#8B9A6E" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M88 36V64H116Z" fill="#8B9A6E"/>
+  <rect x="58" y="78" width="38" height="6" rx="3" fill="#EAE2D6"/>
+  <rect x="58" y="92" width="48" height="6" rx="3" fill="#EAE2D6"/>
+  <rect x="58" y="118" width="48" height="26" rx="4" fill="#55633B"/>
+  <text x="82.0" y="136" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="15" fill="#F7F2EB">PDF</text>
+  <path d="M128 100H150" stroke="#55633B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M150 100C170 100 178 66 206 66" stroke="#55633B" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M150 100C170 100 178 134 206 134" stroke="#55633B" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M196 56L208 66L196 76M196 124L208 134L196 144" stroke="#55633B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M226 32H256L270 46V90H226Z" fill="#F7F2EB" stroke="#8B9A6E" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M256 32V46H270Z" fill="#8B9A6E"/>
+  <rect x="234" y="58" width="20" height="5" rx="2.5" fill="#EAE2D6"/>
+  <rect x="234" y="69" width="28" height="5" rx="2.5" fill="#EAE2D6"/>
+  <path d="M226 110H256L270 124V168H226Z" fill="#F7F2EB" stroke="#8B9A6E" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M256 110V124H270Z" fill="#8B9A6E"/>
+  <rect x="234" y="136" width="20" height="5" rx="2.5" fill="#EAE2D6"/>
+  <rect x="234" y="147" width="28" height="5" rx="2.5" fill="#EAE2D6"/>
+</svg>

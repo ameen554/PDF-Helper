@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none">
+  <g transform="rotate(-8 90 100)"><rect x="42" y="56" width="96" height="76" rx="4" fill="#EEEEEE"/></g>
+  <g transform="rotate(4 90 100)">
+    <rect x="42" y="56" width="96" height="76" rx="4" fill="#EAE2D6" stroke="#8B9A6E" stroke-width="2"/>
+    <circle cx="112" cy="80" r="7" fill="#8B9A6E"/>
+    <path d="M43 131L70 92L88 114L102 98L137 131Z" fill="#8B9A6E"/>
+  </g>
+  <path d="M152 100H184M174 90L184 100L174 110" stroke="#55633B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M204 36H244L272 64V164H204Z" fill="#F7F2EB" stroke="#8B9A6E" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M244 36V64H272Z" fill="#8B9A6E"/>
+  <rect x="214" y="76" width="38" height="6" rx="3" fill="#EAE2D6"/>
+  <rect x="214" y="90" width="48" height="6" rx="3" fill="#EAE2D6"/>
+  <rect x="214" y="118" width="48" height="26" rx="4" fill="#55633B"/>
+  <text x="238.0" y="136" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="15" fill="#F7F2EB">PDF</text>
+</svg>

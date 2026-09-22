@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" fill="none">
+  <path d="M48 36H88L116 64V164H48Z" fill="#F7F2EB" stroke="#8B9A6E" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M88 36V64H116Z" fill="#8B9A6E"/>
+  <rect x="58" y="76" width="38" height="6" rx="3" fill="#EAE2D6"/>
+  <rect x="58" y="90" width="48" height="6" rx="3" fill="#EAE2D6"/>
+  <rect x="58" y="118" width="48" height="26" rx="4" fill="#55633B"/>
+  <text x="82.0" y="136" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="15" fill="#F7F2EB">PDF</text>
+  <path d="M136 100H168M158 90L168 100L158 110" stroke="#55633B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="rotate(-8 236 100)"><rect x="188" y="56" width="96" height="76" rx="4" fill="#EEEEEE"/></g>
+  <g transform="rotate(4 236 100)">
+    <rect x="188" y="56" width="96" height="76" rx="4" fill="#EAE2D6" stroke="#8B9A6E" stroke-width="2"/>
+    <circle cx="258" cy="80" r="7" fill="#8B9A6E"/>
+    <path d="M189 131L216 92L234 114L248 98L283 131Z" fill="#8B9A6E"/>
+  </g>
+</svg>
